@@ -337,7 +337,7 @@ function App() {
 
           <div style={{ display: 'flex', flexDirection: "column", alignItems: "center", alignSelf: "center", width: "100%" }}>
             <div style={{ color: "white", fontSize: "1rem" }}>
-              Copyright © todos os diretos reservados
+              Copyright © todos os diretos reservados por João Victor Fagundes de matos
             </div>
           </div>
 
