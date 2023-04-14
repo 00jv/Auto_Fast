@@ -92,7 +92,7 @@ function Home() {
 
 
 
-            <div style={{ display: "flex", flexDirection: "column", width: "70%", padding: "1rem", justifyContent: "center", alignItems: "center", margin: "0 auto" }}>
+            <div style={{ display: "flex", flexDirection: "column", width: "70%", padding: "0.5rem", justifyContent: "center", alignItems: "center", margin: "0 auto" }}>
                 <div style={{ justifyContent: "center", display: "flex" }}>
                     <h1 style={{ margin: "0 auto", textAlign: "center" }}>Encontre-nos</h1>
                 </div>
@@ -101,8 +101,8 @@ function Home() {
 
 
 
-            <div style={{ display: "flex", flexDirection: "column", width: "100%", padding: "6rem", justifyContent: "center", alignItems: "center", margin: "0 auto" }}>
-                <div style={{ display: "flex", flexDirection: "column", alignItems: "center" }}>
+            <div style={{ display: "flex", flexDirection: "column", padding: "6rem", justifyContent: "center", alignItems: "center", margin: "0 auto" }}>
+                <div style={{ display: "flex", flexDirection: "column", width: '100%', alignItems: "center" }}>
                     <MapContainer />
                 </div>
 
