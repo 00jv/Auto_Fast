@@ -12,8 +12,6 @@ const IframeResponsive = styled.iframe`
     width: 100%;
     height: 150px
  }
-
-
 `
 const MapContainer = () => {
     return (

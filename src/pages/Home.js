@@ -18,13 +18,14 @@ import InstagramIcon from '@mui/icons-material/Instagram';
 import LinkedInIcon from '@mui/icons-material/LinkedIn';
 import WhatsAppIcon from '@mui/icons-material/WhatsApp';
 import TwitterIcon from '@mui/icons-material/Twitter';
-import Mapa from "../img/mapa.png"
+import { toast } from "react-toastify"
 import MapContainer from "../components/MapContainer";
 import { Box } from "@mui/material";
 import CardCarros from "../components/CardCarros"
 import Depoimentos from "../components/Depoimentos";
 import { useNavigate } from "react-router";
 function Home() {
+
     const navigate = useNavigate()
 
     function RouterCarNacionais() {
@@ -36,6 +37,14 @@ function Home() {
         navigate("/CarInternacionais")
     }
 
+    function TesteFunction() {
+        console.log("Caiu aqui")
+        handleClick()
+    }
+
+    const handleClick = () => {
+        toast.success('Exemplo de Toast!', { position: toast.POSITION.TOP_RIGHT });
+    };
     return (
         <>
             <header>
@@ -107,7 +116,7 @@ function Home() {
                 </div>
 
                 <div style={{ display: "flex", flexDirection: "column", width: "100%", padding: "1rem" }}>
-                    <Form style={{ width: "100%" }}>
+                    <Form style={{ width: "100%" }} onSubmit={() => TesteFunction()}>
                         <FormGroup>
                             <Label for="nome">
                                 Nome
@@ -117,6 +126,7 @@ function Home() {
                                 name="nome"
                                 placeholder="Ex: João Victor Fagundes de matos"
                                 type="text"
+                                required
                             />
                         </FormGroup>
                         <FormGroup>
@@ -128,6 +138,7 @@ function Home() {
                                 name="email"
                                 placeholder="Ex: jvmatosfagundes@gmail.com"
                                 type="email"
+                                required
                             />
                         </FormGroup>
                         <FormGroup>
@@ -138,9 +149,10 @@ function Home() {
                                 id="exampleText"
                                 name="text"
                                 type="textarea"
+                                required
                             />
                         </FormGroup>
-                        <Button style={{ backgroundColor: "red", color: "white" }}>
+                        <Button type="submit" style={{ backgroundColor: "red", color: "white" }} >
                             Enviar
                         </Button>
                     </Form>
@@ -186,6 +198,8 @@ function Home() {
 
                 </footer>
             </div>
+
+
         </>
     );
 }
