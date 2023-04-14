@@ -3,8 +3,6 @@ import MyRouter from "./routes";
 
 export default function App() {
   return (
-    <div>
       <MyRouter />
-    </div>
   );
 }

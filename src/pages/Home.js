@@ -19,11 +19,22 @@ import LinkedInIcon from '@mui/icons-material/LinkedIn';
 import WhatsAppIcon from '@mui/icons-material/WhatsApp';
 import TwitterIcon from '@mui/icons-material/Twitter';
 import Mapa from "../img/mapa.png"
+import MapContainer from "../components/MapContainer";
 import { Box } from "@mui/material";
 import CardCarros from "../components/CardCarros"
 import Depoimentos from "../components/Depoimentos";
+import { useNavigate } from "react-router";
 function Home() {
-    const [rSelected, setRSelected] = React.useState(null);
+    const navigate = useNavigate()
+
+    function RouterCarNacionais() {
+        navigate("/CarNacionais")
+    }
+
+
+    function RouterCarInternacionais() {
+        navigate("/CarInternacionais")
+    }
 
     return (
         <>
@@ -49,11 +60,11 @@ function Home() {
                                         Produtos
                                     </DropdownToggle>
                                     <DropdownMenu>
-                                        <DropdownItem>
+                                        <DropdownItem onClick={() => RouterCarNacionais()}>
                                             Carros Nacionais
                                         </DropdownItem>
                                         <DropdownItem divider />
-                                        <DropdownItem>
+                                        <DropdownItem onClick={() => RouterCarInternacionais()}>
                                             Carros internacionais
                                         </DropdownItem>
                                     </DropdownMenu>
@@ -92,7 +103,7 @@ function Home() {
 
             <div style={{ display: "flex", flexDirection: "column", width: "100%", padding: "6rem", justifyContent: "center", alignItems: "center", margin: "0 auto" }}>
                 <div style={{ display: "flex", flexDirection: "column", alignItems: "center" }}>
-                    <img src={Mapa} style={{ maxWidth: "100%" }} />
+                    <MapContainer />
                 </div>
 
                 <div style={{ display: "flex", flexDirection: "column", width: "100%", padding: "1rem" }}>

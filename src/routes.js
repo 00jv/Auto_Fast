@@ -1,13 +1,15 @@
 import React from "react";
-import { Route, Routes} from "react-router-dom";
-
+import { Route, Router, Routes } from "react-router-dom";
 import Home from "./pages/Home";
-
+import CarInternacionais from "./pages/CarInternacionais";
+import CarNacionais from "./pages/CarNacionais";
 
 const MyRouter = () => {
   return (
     <Routes>
-        <Route exact path="/" component={Home} />
+      <Route index Component={Home} />
+      <Route path="/CarInternacionais" Component={CarInternacionais} />
+      <Route path="/CarNacionais" Component={CarNacionais} />
     </Routes>
   );
 };
