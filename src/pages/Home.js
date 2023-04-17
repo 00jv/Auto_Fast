@@ -25,7 +25,7 @@ import { Box } from "@mui/material";
 import CardCarros from "../components/CardCarros"
 import Depoimentos from "../components/Depoimentos";
 import { useNavigate } from "react-router";
-
+import ModalSobre from "../components/ModalSobre";
 
 const ContainerMap = styled.div`
  display: flex; 
@@ -64,22 +64,30 @@ function Home() {
     const handleClick = () => {
         toast.success('Exemplo de Toast!', { position: toast.POSITION.TOP_RIGHT });
     };
+
+    const handleScrollToTop = () => {
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+      };
+    
+    const [modal, setModal] = React.useState(false);
+
+    const toggle = () => setModal(!modal);
     return (
         <>
-            <header>
-                <div style={{ display: "flex", flexDirection: "row", width: "100%s" }}>
+            <header style={{ position: 'fixed', top: '0', left: '0', right: '0', zIndex: '999', backgroundColor: 'white' }}>
+                <div style={{ display: "flex", flexDirection: "row", width: "100%" }}>
                     <div style={{ display: "flex", flexDirection: "column", width: "100%" }}>
-                        <Box sx={{ width: { xl: "20%", sm: "20%" } }}>
+                        <Box sx={{ width: { xl: "10%", sm: "12%" } }}>
                             <img src={Logo} width="100%" />
                         </Box>
                     </div>
 
                     <Box sx={{ display: "flex", flexDirection: "column", justifyContent: "flex-end", marginRight: "1rem" }}>
                         <ButtonGroup className="my-2">
-                            <Button outline color="danger">
+                            <Button outline color="danger" onClick={() => handleScrollToTop()}>
                                 Inicio
                             </Button>
-                            <Button outline color="danger">
+                            <Button outline color="danger" onClick={() => toggle()}>
                                 Sobre
                             </Button>
                             <ButtonGroup>
@@ -102,8 +110,9 @@ function Home() {
                     </Box>
                 </div>
             </header>
+
             {/* Carrosel */}
-            <div style={{ width: "100%", height: "5%", marginTop: "1rem" }}>
+            <div style={{ width: "100%", height: "5%", marginTop: "5rem" }}>
                 <CarouselCars />
             </div>
 
@@ -208,7 +217,7 @@ function Home() {
 
                 </footer>
             </div>
-
+            <ModalSobre modal={modal} toggle={toggle} />
 
         </>
     );
