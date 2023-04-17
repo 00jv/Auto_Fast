@@ -1,6 +1,6 @@
 # Atividade de Desenvolvimento Web 
 
-Aplicação para Vandas de Carros esportivos e Carros Nacionais
+Aplicação para Vendas de Carros esportivos e Carros Nacionais
 
 
 # Getting Started with Create React App
