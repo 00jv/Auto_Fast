@@ -14,6 +14,7 @@ import {
     DropdownMenu,
     DropdownToggle
 } from "reactstrap";
+import styled from "styled-components";
 import InstagramIcon from '@mui/icons-material/Instagram';
 import LinkedInIcon from '@mui/icons-material/LinkedIn';
 import WhatsAppIcon from '@mui/icons-material/WhatsApp';
@@ -24,6 +25,24 @@ import { Box } from "@mui/material";
 import CardCarros from "../components/CardCarros"
 import Depoimentos from "../components/Depoimentos";
 import { useNavigate } from "react-router";
+
+
+const ContainerMap = styled.div`
+ display: flex; 
+ flex-direction: row; 
+ width: 70%; 
+ padding: 0.5rem; 
+ justify-content: center; 
+ align-items: center; 
+ margin: 0 auto;
+ 
+ @media (max-width: 750px) {
+    flex-direction: column;
+ }
+ 
+ `
+
+
 function Home() {
 
     const navigate = useNavigate()
@@ -92,14 +111,7 @@ function Home() {
                 <CardCarros />
             </div>
 
-
-
             <Depoimentos />
-
-
-
-
-
 
             <div style={{ display: "flex", flexDirection: "column", width: "70%", padding: "0.5rem", justifyContent: "center", alignItems: "center", margin: "0 auto" }}>
                 <div style={{ justifyContent: "center", display: "flex" }}>
@@ -108,9 +120,7 @@ function Home() {
             </div>
 
 
-
-
-            <div style={{ display: "flex", flexDirection: "column", padding: "6rem", justifyContent: "center", alignItems: "center", margin: "0 auto" }}>
+            <ContainerMap>
                 <div style={{ display: "flex", flexDirection: "column", width: '100%', alignItems: "center" }}>
                     <MapContainer />
                 </div>
@@ -157,7 +167,7 @@ function Home() {
                         </Button>
                     </Form>
                 </div>
-            </div>
+            </ContainerMap>
 
 
 
